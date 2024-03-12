@@ -24,12 +24,12 @@ names = ['Chase Without Fear',
          'Tree of Despair'
          ]
 
-COVER_TYPE = ['Softcover',
+cover_type = ['Softcover',
               'Hardcover with ImageWrap',
               'Hardcover with dust jacket  '
               ]
 
-CATEGORY = ['Comics',
+category = ['Comics',
             'Computers & Tech',
             'Romance',
             'Sports',
@@ -63,8 +63,8 @@ for _ in range(0, 10):
     name_choice = random.choice(names)
     names.remove(name_choice)
     page_quantity_choice = random.randint(1, 2500)
-    cover_type_choice = random.choice(COVER_TYPE)
-    category_choice = random.choice(CATEGORY)
+    cover_type_choice = random.choice(cover_type)
+    category_choice = random.choice(category)
     c.execute('''INSERT INTO BOOKS (name, page_quantity, cover_type, category) VALUES (?, ?, ?, ?)''',
               (name_choice, page_quantity_choice, cover_type_choice, category_choice))
 
